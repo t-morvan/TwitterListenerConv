@@ -1,10 +1,13 @@
 # Twitter listener + conversation collection 
 
 Given a set of Twitter ids :
-1 listen and collect tweets posted by the users.
+
+1. listen and collect tweets posted by the users.
 2. Collect the conversation sparked by the tweets.
+
 It uses Tweepy with Twitter API v1 for the listener and v2 for retrieving the conversation
 
+## Parameters 
 1. `ids` : list of twitter
 2. `conv_lifetime` : time to wait before collecting the conversation sparked by a tweet.
 
