@@ -38,7 +38,7 @@ class GetReplies(Thread):
                                 tweet = json.loads(line)
                                 replies=self.get_replies(tweet['id'])
                                 all_replies.append(replies)
-                    except :
+                    except FileNotFoundError:
                         continue    
 
                     # save as json all the replies for this day
