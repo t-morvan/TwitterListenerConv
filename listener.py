@@ -58,7 +58,7 @@ class GetReplies(Thread):
 
     def get_replies(self,tweet_id):
         replies=Paginator(self.api_v2.search_recent_tweets,max_results=100,
-        user_auth=True,query="conversation_id:{}".format(tweet_id),tweet_fields=["in_reply_to_user_id","author_id","created_at","conversation_id","public_metrics","referenced_tweets.id"]).flatten()
+        user_auth=True,query="conversation_id:{}".format(tweet_id),tweet_fields=["in_reply_to_user_id","author_id","created_at","conversation_id","public_metrics"],expansions=["referenced_tweets.id","in_reply_to_user_id"]).flatten()
         return [reply.data for reply in replies]
 
 class ProcessTweets(Thread):
